@@ -9,7 +9,9 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_oougs"]
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 0
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
 script = ExtResource("1_ljc1s")
 
 [node name="Area2D" type="Area2D" parent="."]
