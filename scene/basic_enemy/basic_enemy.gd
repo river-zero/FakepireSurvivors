@@ -5,7 +5,7 @@ const MAX_SPEED = 75
 func _ready():
 	$Area2D.area_entered.connect(on_area_entered)
 
-func _process(_delta):
+func _process(delta):
 	var direction = get_direction_to_player()
 	velocity = direction * MAX_SPEED
 	move_and_slide()
