@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://6opkj4grn7va"]
+[gd_scene load_steps=9 format=3 uid="uid://6opkj4grn7va"]
 
 [ext_resource type="Texture2D" uid="uid://dg3h13ae4nh6x" path="res://scene/game_object/basic_enemy/basic_enemy.png" id="1_747r8"]
 [ext_resource type="Script" path="res://scene/game_object/basic_enemy/basic_enemy.gd" id="1_ljc1s"]
 [ext_resource type="PackedScene" uid="uid://da758g1v4sf3m" path="res://scene/component/health_component.tscn" id="2_ev1b8"]
 [ext_resource type="PackedScene" uid="uid://dnskr0mu1gh0n" path="res://scene/component/vial_drop_component.tscn" id="3_74rbu"]
 [ext_resource type="PackedScene" uid="uid://bdcqk43f0t1bx" path="res://scene/game_object/experience_vial/experience_vial.tscn" id="4_djlqj"]
+[ext_resource type="PackedScene" uid="uid://bewtpjvcfuj30" path="res://scene/component/hurtbox_component.tscn" id="5_tiw3b"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kuywg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8dvn"]
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oougs"]
@@ -20,16 +21,15 @@ script = ExtResource("1_ljc1s")
 [node name="HealthComponent" parent="." instance=ExtResource("2_ev1b8")]
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_74rbu")]
+health_component = NodePath("../HealthComponent")
 vial_scene = ExtResource("4_djlqj")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_tiw3b")]
 health_component = NodePath("../HealthComponent")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_kuywg")
+shape = SubResource("CircleShape2D_u8dvn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_747r8")
