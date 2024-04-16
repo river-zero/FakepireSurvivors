@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://e7eall16jmsb"]
+
+[ext_resource type="Script" path="res://scene/ui/ability_upgrade_card.gd" id="1_t5th7"]
+
+[node name="AbilityUpgradeCard" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 150)
+script = ExtResource("1_t5th7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "이름"
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "이것은 설명입니다. 칸에 맞춰서 자동으로 글자를 넣어주지요."
+autowrap_mode = 2
