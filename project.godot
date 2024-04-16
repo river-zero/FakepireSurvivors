@@ -15,6 +15,10 @@ run/main_scene="res://scene/main/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameEvent="*res://scene/autoload/game_event.tscn"
+
 [debug]
 
 gdscript/warnings/unused_parameter=0
@@ -56,6 +60,7 @@ move_down={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="EnemyCollision"
+2d_physics/layer_5="PlayerPickup"
 
 [rendering]
 
