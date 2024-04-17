@@ -5,6 +5,10 @@ func _ready():
 	$%RestartButton.pressed.connect(on_restart_button_pressed)
 	$%QuitButton.pressed.connect(on_quit_button_pressed)
 	
+func set_defeat():
+	$%TitleLabel.text = "실패"
+	$%DescriptionLabel.text = "안타깝습니다ㅜㅜ"
+	
 func on_restart_button_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scene/main/main.tscn")
